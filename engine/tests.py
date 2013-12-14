@@ -15,4 +15,12 @@ class TestWorldMechanics(TestCase):
 
 
 class TestCellState(TestCase):
-    pass
+    def test_cell_dies(self):
+        world = World(set([(1, 1)]))
+        self.assertFalse(world.cell_lives((1, 1)))
+
+        world.cells.add((1, 2))
+        self.assertFalse(world.cell_lives((1, 1)))
+
+        world.cells.add((2, 2))
+        self.assertTrue(world.cell_lives((1, 1)))

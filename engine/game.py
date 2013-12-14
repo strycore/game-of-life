@@ -13,3 +13,6 @@ class World(object):
                 if self.cell_at(cell):
                     neighbors.add(cell)
         return neighbors
+
+    def cell_lives(self, position):
+        return len(self.neighbors_at(position)) in (2, 3)

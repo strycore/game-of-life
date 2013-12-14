@@ -11,7 +11,7 @@ class TestWorldMechanics(TestCase):
 
     def test_can_count_neighbors(self):
         world = World(set([(1, 1), (2, 1), (1, 2), (2, 2), (5, 5)]))
-        self.assertEqual(len(world.neighbors_at((1, 1))), 4)
+        self.assertEqual(len(world.neighbors_at((1, 1))), 3)
 
 
 class TestCellState(TestCase):
